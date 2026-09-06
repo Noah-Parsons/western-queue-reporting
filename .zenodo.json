@@ -1,0 +1,39 @@
+{
+  "title": "Who Reports Withdrawal Dates in the Western Interconnection Queue, and Does It Matter?",
+  "description": "<p>Berkeley Lab's <em>Queued Up</em> publishes a median duration from interconnection request to withdrawal for the non-ISO West. That figure is computed from the 12.1% of western withdrawals that carry a recorded withdrawal date, filed with five or six of the region's thirty-one transmission providers.</p><p>This analysis tests whether that reporting subset is representative of the region it is used to describe. It is not: technology mix, queue cohort and interconnection service type all differ from the regional population at p &lt; 1e-11, while project capacity does not. But standardising the subset to the region's actual composition moves the median by less than three months, with an interval including zero and a sign that reverses under a truncation-matched observation window. A validation exercise inside the well-covered ISO regions shows why: technology, cohort and capacity together explain under 5% of the variance in withdrawal duration, so a composition gap of this size has little room to move a median.</p><p>A companion logistic regression over all 8,097 western requests, which requires no dates, finds solar the most withdrawal-prone technology, larger projects more likely to be withdrawn, and roughly a quarter of the latent variation in withdrawal risk sitting between providers rather than between projects.</p><p>Includes the full R analysis pipeline, result tables and figures.</p>",
+  "upload_type": "publication",
+  "publication_type": "workingpaper",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Parsons, Noah"
+    }
+  ],
+  "keywords": [
+    "interconnection queue",
+    "electricity transmission",
+    "Western Interconnection",
+    "missing data",
+    "selection bias",
+    "post-stratification",
+    "energy policy",
+    "grid interconnection",
+    "WECC"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://emp.lbl.gov/queues",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/GuiloScion/western-queue-reporting",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Analysis derives from the Queued Up 2026 Edition data file, published by Lawrence Berkeley National Laboratory and GridTracker under CC BY 4.0. The data file is redistributed here under that licence."
+}

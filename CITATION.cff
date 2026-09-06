@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: >-
+  Who Reports Withdrawal Dates in the Western Interconnection
+  Queue, and Does It Matter?
+message: >-
+  If you use this analysis, please cite it using the metadata
+  from this file.
+type: software
+authors:
+  - family-names: Parsons
+    given-names: Noah
+repository-code: 'https://github.com/GuiloScion/western-queue-reporting'
+abstract: >-
+  Berkeley Lab's Queued Up publishes a median duration from
+  interconnection request to withdrawal for the non-ISO West,
+  computed from the 12.1% of western withdrawals that carry a
+  recorded withdrawal date. This analysis finds that reporting
+  subset compositionally unrepresentative of the region --
+  technology mix, queue cohort and service type all differ at
+  p < 1e-11 -- but shows that standardising to the region's
+  actual composition moves the median by less than three
+  months, with a sign that is not identified. Technology,
+  cohort and capacity explain under 5% of the variance in
+  withdrawal duration, leaving coverage rather than
+  composition as the binding caveat.
+keywords:
+  - interconnection queue
+  - electricity transmission
+  - Western Interconnection
+  - selection bias
+  - post-stratification
+  - energy policy
+license: CC-BY-4.0

@@ -1,0 +1,65 @@
+"model","term","odds_ratio","ci_lo","ci_hi","p"
+"random-intercept","(Intercept)",1.923,1.249,2.961,0.00299
+"random-intercept","techWind",0.547,0.458,0.652,1.94e-11
+"random-intercept","techSolar+Battery",0.578,0.487,0.685,2.73e-10
+"random-intercept","techBattery",0.521,0.428,0.635,9.92e-11
+"random-intercept","techGas",0.355,0.282,0.447,9.46e-19
+"random-intercept","techOther",0.314,0.264,0.373,4.61e-39
+"random-intercept","lmw",1.129,1.089,1.17,3.24e-11
+"random-intercept","cohort2015-18",0.61,0.516,0.721,7.56e-09
+"random-intercept","cohort2019-21",0.446,0.374,0.531,2.03e-19
+"random-intercept","cohort2022+",0.344,0.293,0.403,1.71e-39
+"fixed-effects","(Intercept)",6.063,5.02,7.323,3.87e-78
+"fixed-effects","techWind",0.546,0.458,0.652,2.08e-11
+"fixed-effects","techSolar+Battery",0.581,0.49,0.689,4.52e-10
+"fixed-effects","techBattery",0.523,0.429,0.637,1.27e-10
+"fixed-effects","techGas",0.356,0.283,0.448,1.29e-18
+"fixed-effects","techOther",0.314,0.264,0.373,6.16e-39
+"fixed-effects","lmw",1.13,1.09,1.172,2.29e-11
+"fixed-effects","cohort2015-18",0.613,0.518,0.725,1.06e-08
+"fixed-effects","cohort2019-21",0.444,0.372,0.529,1.56e-19
+"fixed-effects","cohort2022+",0.347,0.296,0.407,1.26e-38
+"fixed-effects","entityAPS",0.623,0.504,0.77,1.17e-05
+"fixed-effects","entityAvista",0.717,0.504,1.021,0.0648
+"fixed-effects","entityBHCT",0.416,0.227,0.765,0.00476
+"fixed-effects","entityBHP",0.1,0.041,0.244,3.9e-07
+"fixed-effects","entityBPA",0.469,0.395,0.557,3.97e-18
+"fixed-effects","entityCLPT",0.197,0.099,0.395,4.41e-06
+"fixed-effects","entityEPE",0.236,0.141,0.395,4.09e-08
+"fixed-effects","entityIP",0.756,0.623,0.917,0.00461
+"fixed-effects","entityLADWP",0.212,0.141,0.319,1.06e-13
+"fixed-effects","entityNVE",0.355,0.287,0.44,2.59e-21
+"fixed-effects","entityNWMT",0.817,0.642,1.04,0.1
+"fixed-effects","entityOther (small)",0.335,0.157,0.715,0.00468
+"fixed-effects","entityPGE",0.26,0.175,0.387,3.08e-11
+"fixed-effects","entityPNM",0.521,0.406,0.669,3.28e-07
+"fixed-effects","entityPRPA",0.519,0.297,0.906,0.0211
+"fixed-effects","entityPSCo",0.615,0.478,0.79,0.000147
+"fixed-effects","entityPSE",0.58,0.399,0.843,0.00432
+"fixed-effects","entitySMUD",0.488,0.241,0.988,0.0461
+"fixed-effects","entitySRP",0.659,0.457,0.95,0.0254
+"fixed-effects","entitySRP_ANPP",0.129,0.068,0.247,5.65e-10
+"fixed-effects","entitySRP_PV-PC",0.559,0.263,1.19,0.131
+"fixed-effects","entityTEP",0.944,0.624,1.429,0.785
+"fixed-effects","entityTSGT",0.055,0.031,0.098,1.21e-22
+"fixed-effects","entityWAPA-IS",0.53,0.393,0.716,3.39e-05
+"fixed-effects","entityWAPA-RM",1.024,0.629,1.67,0.923
+"strict outcome","(Intercept)",1.719,1.097,2.694,0.0181
+"strict outcome","techWind",0.554,0.462,0.663,1.42e-10
+"strict outcome","techSolar+Battery",0.62,0.52,0.74,1.08e-07
+"strict outcome","techBattery",0.524,0.428,0.643,5.07e-10
+"strict outcome","techGas",0.361,0.285,0.457,2.42e-17
+"strict outcome","techOther",0.32,0.268,0.382,1.53e-36
+"strict outcome","lmw",1.169,1.127,1.213,9.62e-17
+"strict outcome","cohort2015-18",0.61,0.514,0.724,1.68e-08
+"strict outcome","cohort2019-21",0.507,0.422,0.609,3.83e-13
+"strict outcome","cohort2022+",0.324,0.275,0.381,8.38e-42
+"equal exposure (<=2021)","(Intercept)",1.666,1.039,2.671,0.034
+"equal exposure (<=2021)","techWind",0.519,0.422,0.638,5.05e-10
+"equal exposure (<=2021)","techSolar+Battery",0.389,0.309,0.489,7.19e-16
+"equal exposure (<=2021)","techBattery",0.367,0.273,0.494,3.31e-11
+"equal exposure (<=2021)","techGas",0.413,0.313,0.544,3.11e-10
+"equal exposure (<=2021)","techOther",0.314,0.255,0.387,1.3e-27
+"equal exposure (<=2021)","lmw",1.179,1.129,1.231,1e-13
+"equal exposure (<=2021)","cohort2015-18",0.656,0.548,0.784,3.49e-06
+"equal exposure (<=2021)","cohort2019-21",0.539,0.442,0.658,1.09e-09

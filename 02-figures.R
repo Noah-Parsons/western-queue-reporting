@@ -1,3 +1,15 @@
+# 02-figures.R -- the three exploratory figures.
+#
+# Previously this relied on `west` and `wd` being left in the workspace by
+# 01-explore.R. It now builds them from 00-setup.R so that it runs standalone.
+
+source("00-setup.R")
+library(ggplot2)
+
+west <- build_west()
+wd   <- west |> filter(withdrawn)
+dir.create("figures", showWarnings = FALSE)
+
 roster <- west |>
   group_by(entity) |>
   summarise(
@@ -21,8 +33,6 @@ roster |> filter(withdrawn >= 10) |> summarise(
 )
 
 roster |> filter(withdrawn >= 10) |> count(dated_rate > 25)
-library(ggplot2)
-
 roster |>
   filter(withdrawn >= 10) |>
   ggplot(aes(x = reorder(entity, dated_rate), y = dated_rate)) +
@@ -51,7 +61,7 @@ roster |>
   ) +
   theme_minimal()
 p1 <- last_plot() + theme(plot.margin = margin(10, 10, 10, 20))
-p1
+ggsave("figures/01-reporting-by-entity.png", p1, width = 9, height = 7, dpi = 300)
 mix <- wd |>
   mutate(
     tech = ifelse(type_clean %in% c("Solar", "Wind", "Solar+Battery", "Battery", "Gas"),
@@ -76,6 +86,7 @@ ggplot(mix, aes(x = tech, y = pct, fill = group)) +
   ) +
   theme_minimal() +
   theme(legend.position = "top")
+ggsave("figures/02-resource-mix.png", last_plot(), width = 9, height = 6, dpi = 300)
 ggplot(wd, aes(x = q_year, fill = ifelse(reports, "Reporting", "Non-reporting"))) +
   geom_density(alpha = 0.5) +
   labs(
@@ -88,3 +99,4 @@ ggplot(wd, aes(x = q_year, fill = ifelse(reports, "Reporting", "Non-reporting"))
   ) +
   theme_minimal() +
   theme(legend.position = "top")
+ggsave("figures/03-queue-vintage.png", last_plot(), width = 9, height = 6, dpi = 300)
