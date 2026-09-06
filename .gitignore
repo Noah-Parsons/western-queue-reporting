@@ -3,3 +3,9 @@
 .Rproj.user/
 .Ruserdata
 Rplots.pdf
+
+# LaTeX build artefacts
+*.aux
+*.out
+*.toc
+*.synctex.gz
