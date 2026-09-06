@@ -1,6 +1,6 @@
 # Western Queue Reporting
 
-<!-- DOI-BADGE -->
+[![DOI](https://zenodo.org/badge/1355363143.svg)](https://doi.org/10.5281/zenodo.22547678)
 
 Are the interconnection withdrawal dates published for the non-ISO West
 representative of the region?
