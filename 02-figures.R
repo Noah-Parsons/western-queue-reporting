@@ -15,7 +15,8 @@ roster <- west |>
   summarise(
     requests   = n(),
     withdrawn  = sum(q_status == "withdrawn"),
-    wd_dated   = sum(q_status == "withdrawn" & !is.na(wd_date)),
+    # the paper's `dated` (usable duration), so the bars match Table 2
+    wd_dated   = sum(q_status == "withdrawn" & dated),
     .groups    = "drop"
   ) |>
   mutate(
@@ -54,7 +55,7 @@ roster |>
   coord_flip() +
   labs(
     x = NULL,
-    y = "Withdrawals with a recorded withdrawal date (%)",
+    y = "Withdrawals carrying a usable withdrawal duration (%)",
     title = "Withdrawal-date reporting by western transmission provider",
     subtitle = "Non-ISO West, entities with 10 or more withdrawals; withdrawal count in parentheses",
     caption = "Data: LBNL Queued Up 2026 Edition (Berkeley Lab and GridTracker), CC BY 4.0"
