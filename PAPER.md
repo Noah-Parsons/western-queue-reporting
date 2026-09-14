@@ -259,6 +259,11 @@ For test 5 each basis takes its natural provider-level analogue: for the dated
 basis, providers recording any date (six, including PacifiCorp); for the entity
 basis, providers clearing the 25% threshold (five).
 
+Each test compares the reporting subset with the *remainder* of the region. The
+composition shares quoted in Section 4.2 and shown in the composition-gap figure
+are instead set against the *whole* regional population, subset included, since
+that is the population the published median is taken to describe.
+
 ### 4.2 Results
 
 ### Table 3: the family of five

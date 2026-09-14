@@ -11,6 +11,8 @@
 \usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 \usepackage{caption}
+% \FloatBarrier keeps a table ahead of the text that discusses it
+\usepackage{placeins}
 
 \sisetup{group-separator={,}}
 \captionsetup{font=small,labelfont=bf}
@@ -238,7 +240,9 @@ five record one for at least a quarter of their withdrawals.}
 \centering
 \caption{Western transmission providers with 25 or more requests, through 2025.
 \emph{Dated} counts withdrawals carrying a usable duration; \emph{Rate} is that
-as a share of the provider's withdrawals. Reporting providers in bold.}
+as a share of the provider's withdrawals. Reporting providers in bold. The
+remaining nine providers have fewer than 25 requests each and none records a
+date.}
 \begin{tabular}{lrrrr}
 \toprule
 Provider & Requests & Withdrawn & Dated & Rate \\
@@ -273,9 +277,7 @@ BHP               & \num{26}   & \num{7}    & 0   & \SI{0}{\percent} \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-The remaining nine providers have fewer than 25 requests each and none records a
-date.
+\FloatBarrier
 
 The distribution is close to binary. Providers either record dates for roughly
 half their withdrawals or better, or they record none whatsoever. PacifiCorp is
@@ -332,6 +334,11 @@ family, giving ten tests in all. For test 5 each basis takes its natural
 provider-level analogue: for the dated basis, providers recording any date (six,
 including PacifiCorp); for the entity basis, providers clearing the
 \SI{25}{\percent} threshold (five).
+
+Each test compares the reporting subset with the \emph{remainder} of the region.
+The composition shares quoted in Section~4.2 and shown in Figure~2 are instead
+set against the \emph{whole} regional population, subset included, since that is
+the population the published median is taken to describe.
 
 \subsection{Results}
 
@@ -432,6 +439,7 @@ log capacity (MW)          & 1.016 & $0.012$ \\
 \bottomrule
 \end{tabular}
 \end{table}
+\FloatBarrier
 
 Wind withdrawals take about \SI{45}{\percent} longer than solar; the 2019--21
 cohort---the queue surge that has been working through withdrawal since roughly

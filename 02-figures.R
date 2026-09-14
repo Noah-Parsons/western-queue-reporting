@@ -49,7 +49,11 @@ roster |>
   theme_minimal()
 roster |>
   filter(withdrawn >= 10) |>
-  mutate(label = paste0(entity, " (", withdrawn, ")")) |>
+  # display names as in Table 2 of the paper
+  mutate(entity = recode(entity, "IP" = "Idaho Power", "NWMT" = "NorthWestern",
+                         "NVE" = "NV Energy", "SRP_PV-PC" = "SRP-PV/PC",
+                         "SRP_ANPP" = "SRP-ANPP"),
+         label = paste0(entity, " (", withdrawn, ")")) |>
   ggplot(aes(x = reorder(label, dated_rate + withdrawn/100000), y = dated_rate)) +
   geom_col() +
   coord_flip() +
