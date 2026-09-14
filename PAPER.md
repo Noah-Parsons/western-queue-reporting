@@ -1,8 +1,10 @@
 # Who Reports Withdrawal Dates in the Western Interconnection Queue, and Does It Matter?
 
-**Noah Parsons**
+**Noah Parsons**\
+Independent Researcher\
+<parsons.m.noah@gmail.com> · ORCID: [0009-0000-7224-6040](https://orcid.org/0009-0000-7224-6040)
 
-*Draft, September 2026*
+*Working paper, September 2026* · DOI: [10.5281/zenodo.22547678](https://doi.org/10.5281/zenodo.22547678)
 
 ---
 
@@ -11,11 +13,11 @@
 Berkeley Lab's *Queued Up* series publishes, among much else, a median duration
 from interconnection request to withdrawal for each region of the United States.
 For the non-ISO West that figure is computed from the withdrawals that carry a
-recorded withdrawal date. In the 2026 Edition data file, that is 637 of 5,277
+recorded withdrawal date. In the 2026 Edition data file, that is 636 of 5,277
 western withdrawals — **12.1%**. The remaining 87.9% are known to have been
 withdrawn but not when.
 
-This paper asks whether those 637 records are representative of the region whose
+This paper asks whether those 636 records are representative of the region whose
 duration they are used to describe, and if not, how far the published median is
 displaced as a result.
 
@@ -32,7 +34,7 @@ eastern Washington, Los Angeles and El Paso.
 
 **Second, that subset is compositionally unlike the region.** Technology mix,
 queue cohort and interconnection service type all differ from the regional
-population at p < 10⁻¹¹ after correction for multiple comparisons, on both of
+population at p < 10⁻¹⁰ after correction for multiple comparisons, on both of
 the two defensible definitions of "the reporting subset." Project capacity does
 not differ. The dated records over-represent stand-alone solar (44.8% against
 31.5%) and wind (30.7% against 23.1%) and under-represent solar-plus-storage
@@ -59,8 +61,8 @@ part we can check, and it is small. What we cannot check is whether providers
 that record dates withdraw on a different *schedule* from providers that do not
 — and nothing in this data file can settle that.
 
-A companion logistic regression, which needs no dates and therefore uses all
-8,097 western requests, finds that solar is the most withdrawal-prone
+A companion logistic regression, which needs no dates and therefore uses the
+7,991 western requests with complete predictors, finds that solar is the most withdrawal-prone
 technology, that larger projects are more likely to be withdrawn, and that 26%
 of the latent variation in withdrawal risk sits between providers rather than
 between projects.
@@ -110,8 +112,9 @@ GridTracker under CC BY 4.0. Sheet `03. Complete Queue Data` holds project-level
 records: 38,201 rows across nine regions.
 
 The `region` field distinguishes the seven ISO/RTO territories, the Southeast,
-and "West" — the non-ISO Western Interconnection, i.e. WECC excluding CAISO.
-That western region is the study population: **8,097 requests**, of which 5,277
+and "West" — the non-ISO Western Interconnection within the United States, i.e.
+the US portion of WECC excluding CAISO; the file contains no Canadian or Mexican
+records. That western region is the study population: **8,097 requests**, of which 5,277
 (65.2%) are recorded as withdrawn, 1,603 active, 963 operational, 244 suspended
 and 10 unknown.
 
@@ -126,9 +129,11 @@ cohorts (≤2014, 2015–18, 2019–21, 2022+). `mw_1` gives nameplate capacity,
 A record is **dated** if it carries both a queue date and a withdrawal date and
 the resulting duration is non-negative. Six records across the whole file have
 withdrawal dates preceding their queue dates and are excluded on that ground.
-By this definition 637 of the West's 5,277 withdrawals are dated; one of those
-lacks a queue year and so drops out of the cohort-stratified analysis, leaving
-636.
+By this definition 636 of the West's 5,277 withdrawals are dated. Ten western
+withdrawals carry neither a queue date nor a queue year. None of them is dated,
+but none can be assigned a cohort either, so the cohort-stratified analyses in
+Sections 4 and 5 take as their regional population the remaining 5,267
+withdrawals. All 636 dated records are retained throughout.
 
 Two definitions of "the reporting subset" are carried in parallel throughout,
 because they are not the same set and the choice turns out to matter more than
@@ -157,7 +162,7 @@ PacifiCorp's.
 | NYISO | 1,531 | 745 | 48.7% |
 | ERCOT | 1,158 | 520 | 44.9% |
 | Southeast | 2,738 | 845 | 30.9% |
-| **West** | **5,277** | **637** | **12.1%** |
+| **West** | **5,277** | **636** | **12.1%** |
 
 The West is not merely the worst-covered region; it is worse by a factor of two
 and a half than the next-worst. This ordering also defines the calibration set
@@ -185,7 +190,7 @@ duration; `Rate` is that as a share of the provider's withdrawals.
 | APS | 619 | 426 | 0 | 0% |
 | NV Energy | 505 | 263 | 0 | 0% |
 | NorthWestern | 448 | 328 | 0 | 0% |
-| **PSCo** | 408 | 295 | 286 | **96.9%** |
+| **PSCo** | 408 | 295 | 285 | **96.6%** |
 | **PNM** | 356 | 224 | 133 | **59.4%** |
 | WAPA-IS | 273 | 194 | 0 | 0% |
 | **Avista** | 173 | 117 | 71 | **60.7%** |
@@ -219,9 +224,10 @@ region.
 
 That PacifiCorp is both the largest western queue and a near-total
 non-reporter is the central fact of this paper. Its 1,627 withdrawals are 31%
-of the region's total, and 2.7 times those of the next-largest provider.
-Whatever the typical PacifiCorp withdrawal duration is, it contributes 6% of
-its weight to the published median.
+of the region's total, and 2.7 times those of the next-largest provider. Yet its
+97 dated records are only 15% of the 636 on which the published median rests,
+and they are a 6% sample of its own withdrawals. Whatever the typical PacifiCorp
+withdrawal duration is, the published median sees it only through that sample.
 
 Note also the geographic consequence. The five reporting providers serve
 Colorado (PSCo), New Mexico and west Texas (PNM, EPE), eastern Washington and
@@ -575,9 +581,11 @@ PacifiCorp's withdrawal dates do not exist. The Section 6 finding that 26% of
 latent withdrawal-risk variation is between providers makes this channel a live
 concern rather than a formality, and it is entirely plausible that it is larger
 than the compositional channel measured here. Establishing that would require
-withdrawal dates from at least one large non-reporting provider — obtainable, in
-principle, from FERC Form 715 filings or direct queue archives, but not from
-this data file.
+withdrawal dates from at least one large non-reporting provider, and those are
+not in this data file. The realistic routes are archived snapshots of the
+provider's own public queue postings, where a request that disappears between
+two successive snapshots has its withdrawal date bounded to the interval between
+them, or a direct request to the provider.
 
 **The calibration assumes transportability.** Stage A estimates how technology
 and cohort shift duration in CAISO, ISO-NE, MISO and PJM, and Section 5.2's
@@ -626,11 +634,12 @@ The published median withdrawal duration for the non-ISO West rests on 12.1% of
 the region's withdrawals, filed with five or six of its thirty-one transmission
 providers, in service territories covering a minority of the region's queue. The
 largest western provider, PacifiCorp, contributes 31% of the region's
-withdrawals and 6% of its recorded withdrawal dates.
+withdrawals and 15% of its recorded withdrawal dates, having recorded a date for
+only 6% of its own withdrawals.
 
 That reporting subset is measurably unlike the region it represents. Its
 technology mix, queue cohort distribution and interconnection service type all
-differ at p < 10⁻¹¹; only project capacity does not.
+differ at p < 10⁻¹⁰; only project capacity does not.
 
 Yet standardising the subset to the region's actual composition moves the median
 by less than three months on any specification, and by about three weeks on the

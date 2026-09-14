@@ -20,10 +20,13 @@ roster <- west |>
   group_by(entity) |>
   summarise(
     requests  = n(),
-    withdrawn = sum(withdrawn),
+    # before `withdrawn` is overwritten by its count: summarise() evaluates in
+    # order, and a count would make every dated request, of any status, count
     wd_dated  = sum(withdrawn & dated),
+    withdrawn = sum(withdrawn),
     .groups   = "drop"
   ) |>
+  relocate(wd_dated, .after = withdrawn) |>
   mutate(
     wd_rate    = round(100 * withdrawn / requests, 1),
     dated_rate = ifelse(withdrawn > 0, round(100 * wd_dated / withdrawn, 1), NA_real_),
@@ -45,8 +48,8 @@ cat("requests in the West:                   ", sum(roster$requests), "\n")
 cat("withdrawals in the West:                ", sum(roster$withdrawn), "\n")
 cat("withdrawals carrying a usable duration: ", sum(roster$wd_dated),
     sprintf(" (%.1f%%)\n", 100 * sum(roster$wd_dated) / sum(roster$withdrawn)))
-cat("  (one of these lacks a queue year and so drops out of the\n",
-    "   cohort-stratified analysis in 04-standardise.R)\n", sep = "")
+cat("  (ten withdrawals lack a queue year; none of them is dated, but they\n",
+    "   drop out of the cohort-stratified population in 04-standardise.R)\n", sep = "")
 
 pc <- roster |> filter(entity == "PacifiCorp")
 cat("\nPacifiCorp: ", pc$requests, " requests, ", pc$withdrawn, " withdrawals, ",

@@ -24,7 +24,7 @@ result.
 
 **The reporting subset is compositionally unlike the region.** Technology mix,
 queue cohort and interconnection service type all differ from the regional
-population at p < 10⁻¹¹ after Holm correction, on both defensible definitions
+population at p < 10⁻¹⁰ after Holm correction, on both defensible definitions
 of "the reporting subset." Project capacity does not differ. The dated records
 over-represent stand-alone solar (44.8% against 31.5%) and wind (30.7% against
 23.1%), and under-represent solar-plus-storage and stand-alone storage.
@@ -40,7 +40,7 @@ cohort and capacity together explain 4.6% of the variance in withdrawal
 duration.
 
 **The binding caveat is coverage, not composition.** A logistic regression over
-all 8,097 western requests — which needs no dates — finds solar the most
+the 7,991 western requests with complete predictors — which needs no dates — finds solar the most
 withdrawal-prone technology, larger projects more likely to be withdrawn, and
 26% of the latent variation in withdrawal risk sitting between providers rather
 than between projects. Whether the five reporting providers withdraw on a
